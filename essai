@@ -1,0 +1,52 @@
+<!-- 
+import { useEffect } from 'react';
+import { MdDarkMode } from 'react-icons/md';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { handeldarkMode } from '../../actions/types';
+
+const Navbar = () => {
+
+  const mode = useSelector((state) => state.darkMode);
+  const dispatch = useDispatch();
+  const { isdarkMode } = mode;
+
+  const switchDarkMode = () => {
+    isdarkMode
+      ? dispatch(handeldarkMode(false))
+      : dispatch(handeldarkMode(true));
+  };
+  useEffect(() => {
+    //changing color of body with darkmode in useEffect
+    document.body.style.backgroundColor = isdarkMode ? "#292c35" : "#fff";
+  }, [isdarkMode]);
+
+  return (
+    <div className={`navbar dark:bg-black bg-[#A16EE7] fixed`}>
+      <div className="flex-1">
+        <a href='/' className="btn btn-ghost normal-case text-xl">My Therapist</a>
+      </div>
+      <div className="flex-none">
+        <ul className="menu menu-horizontal px-1">
+          <li>
+            <button className='dark' onClick={() => dispatch(switchDarkMode)}><MdDarkMode size={25}/></button>
+          </li>
+          <li>
+            <a href='/'>
+              S'inscrire
+              <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+            </a>
+            <ul className="p-2 bg-base-100">
+              <li className=' hover:bg-[#B983FF]'><a href='/'>Patient</a></li>
+              <li className=' hover:bg-[#B983FF]'><a href='/'>Psycologue</a></li>
+            </ul>
+          </li>
+          <li><a href='/connexion'> Se connecter </a></li>
+        </ul>
+      </div>
+    </div>
+  )
+}
+
+export default Navbar;
+ -->
