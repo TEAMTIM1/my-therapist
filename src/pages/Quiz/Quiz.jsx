@@ -95,7 +95,7 @@ const Quiz = () => {
                                         }
                                     } else {
                                         let isOk = false;
-
+                                        // eslint-disable-next-line 
                                         valueCondition.map((valueCond) => {
                                             if (quizData[questionCondition] === valueCond) {
                                                 isOk = true;
