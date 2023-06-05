@@ -41,7 +41,7 @@ const Modal = ({ isOpen, onClose, name, id, firstname, presentation, chat, visio
       .catch((error) => {
         console.error('Erreur lors de la récupération des avis:', error);
       });
-  }, []);
+  }, [idTherapist]);
 
   // Récupération des spécialités lors du montage du composant
   useEffect(() => {
@@ -53,7 +53,7 @@ const Modal = ({ isOpen, onClose, name, id, firstname, presentation, chat, visio
       .catch((error) => {
         console.error('Erreur lors de la récupération des spécialités:', error);
       });
-  }, []);
+  }, [id]);
 
   // Gestion de la classe CSS pour afficher ou masquer la modale
   const elementClassName = isOpen ? 'block' : 'hidden';

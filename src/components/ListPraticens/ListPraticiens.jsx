@@ -62,7 +62,7 @@ const ListPraticiens = () => {
       .catch((error) => {
         console.log('error', error);
       });
-  }, []);
+  }, [token]);
 
   return (
     <>

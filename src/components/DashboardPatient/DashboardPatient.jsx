@@ -45,7 +45,7 @@ const DashboardPatient = () => {
       .catch((error) => {
         console.log('error', error);
       });
-  }, []);
+  }, [idPatient]);
 
   console.log(myProfil.profilpicture);
   return (
