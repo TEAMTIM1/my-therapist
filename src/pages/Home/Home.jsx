@@ -33,13 +33,6 @@ const Home = () => { // Définition du composant Home
             {/* L'image elle-même */}
           </div>
           <div id="Home--text-container" className="grid justify-items-center">
-          <h1 className=' text-white bg-red-700 animate-pulse'>Nous n'avons pas encore deployé le back mais n'hesitez pas a visiter ses pages</h1>
-          <ul>
-            <li><a href='/booking'>booking page</a></li>
-            <li><a href='/listpraticiens'> list of practitioners  page</a></li>
-            <li><a href='/myprofil'>profil page</a></li>
-            <li><a href='/quizz'>quiz page</a></li>
-          </ul>
             {/* Div pour afficher le texte */}
             <h1 id="Home--title" className="pb-4 text-3xl font-bold text-center">Trouvez le psychologue idéal avec nous</h1>
             {/* Titre de la page */}
