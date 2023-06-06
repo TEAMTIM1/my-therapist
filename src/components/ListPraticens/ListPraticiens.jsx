@@ -49,7 +49,7 @@ const ListPraticiens = () => {
   // Récupération lors du montage du composant, de la "liste" de praticiens filtrée par l'algo 
   useEffect(() => {
     axios
-      .get(`http://etiamsani-server.eddi.cloud:8080/algorithm/me/get-therapists`, {
+      .get(`https://my-therapist-api.up.railway.app/algorithm/me/get-therapists`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
