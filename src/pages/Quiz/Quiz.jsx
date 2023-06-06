@@ -64,7 +64,7 @@ const Quiz = () => {
     }
     return (
 
-        <div className='items-center'>
+        <div className='items-center bg-white'>
             <div className=''>
                 <img className=' h-full w-full' src={quizImage} alt="" />
             </div>

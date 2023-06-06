@@ -14,44 +14,44 @@ const DashboardPatient = () => {
   const navigate = useNavigate()
 
   const idPatient = localStorage.getItem('idPatient')
-/* 
-  const handleDragEnter = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-  };
-
-  const handleDragLeave = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-  };
-
-  const handleDragOver = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-  };
-
-  const handleDrop = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    const file = event.dataTransfer.files[0];
-    setSelectedImage(file);
-    const formData = new FormData();
-    formData.append("image", file);
-    axios
-      .post(`http://etiamsani-server.eddi.cloud:8080/patients/${idPatient}/upload`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log("error", error);
-      });
-  };
-
- */
+  /* 
+    const handleDragEnter = (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+    };
+  
+    const handleDragLeave = (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+    };
+  
+    const handleDragOver = (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+    };
+  
+    const handleDrop = (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const file = event.dataTransfer.files[0];
+      setSelectedImage(file);
+      const formData = new FormData();
+      formData.append("image", file);
+      axios
+        .post(`http://etiamsani-server.eddi.cloud:8080/patients/${idPatient}/upload`, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log("error", error);
+        });
+    };
+  
+   */
   const handleNav = () => {
     setNav(!nav);
     setHidden(!hidden);
@@ -111,7 +111,7 @@ const DashboardPatient = () => {
               <a href="/register">Se déconnecter</a>
             </li>
             <li>
-              <button onClick={handleClick} className='dark'><MdDarkMode size={25} /></button>
+              <button onClick={handleClick} className=''><MdDarkMode size={25} /></button>
             </li>
           </ul>
         </div>
@@ -127,13 +127,13 @@ const DashboardPatient = () => {
           src={
             selectedImage
               ? URL.createObjectURL(selectedImage)
-              : axios.put(`https://my-therapist-api.up.railway.app/patients/${idPatient}`, 
+              : axios.put(`https://my-therapist-api.up.railway.app/patients/${idPatient}`,
                 selectedImage
               )
           }
           alt=""
         />
-       {/*  <div
+        {/*  <div
           onDragEnter={handleDragEnter}
           onDragLeave={handleDragLeave}
           onDragOver={handleDragOver}

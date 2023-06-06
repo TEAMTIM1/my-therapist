@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {},
   },
-  darkMode: 'class',
+  darkMode: 'ligth',
   
   plugins: [require('daisyui'), ("flowbit/pluging")],
 }

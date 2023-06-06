@@ -74,7 +74,7 @@ const DashboardPatient = () => {
               <a href="/register">Se déconnecter</a>
             </li>
             <li>
-              <button onClick={handleClick} className='dark'><MdDarkMode size={25} /></button>
+              <button onClick={handleClick} className=''><MdDarkMode size={25} /></button>
             </li>
           </ul>
         </div>

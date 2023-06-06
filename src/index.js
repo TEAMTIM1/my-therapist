@@ -10,7 +10,10 @@ root.render(
 
   <Router>
     <React.StrictMode>
-       <App />
+    <div className=''>
+           <App />
+        </div>
+      
        </React.StrictMode>
    </Router>
 
