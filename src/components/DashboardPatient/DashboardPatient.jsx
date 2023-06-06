@@ -37,7 +37,7 @@ const DashboardPatient = () => {
 
   useEffect(() => {
     axios
-      .get(`http://etiamsani-server.eddi.cloud:8080/patients/${idPatient}`)
+      .get(`https://my-therapist-api.up.railway.app/patients/${idPatient}`)
       .then((response) => {
         setMyProfil(response.data);
         console.log(response.data);
@@ -88,7 +88,7 @@ const DashboardPatient = () => {
 
 
 
-        <img className='mx-auto my-8 object-cover w-32 h-32 rounded-full' src={`http://etiamsani-server.eddi.cloud:8080/${myProfil.profilpicture}`} alt="" />
+        <img className='mx-auto my-8 object-cover w-32 h-32 rounded-full' src={`https://my-therapist-api.up.railway.app/${myProfil.profilpicture}`} alt="" />
 
         <h1 className='mx-auto mt-4 text-center'>{myProfil.firstname} {myProfil.lastname}</h1>
 

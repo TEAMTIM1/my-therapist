@@ -41,7 +41,7 @@ const MyProfil = () => {
 
       <div className="flex flex-col justify-center items-center p-4 w-full min-h-screen bg-[#B983FF]">
         <div id="Bienvenue">
-          <h1 className="text-center text-white text-4xl md:text-6xl">Bienvenue {getInfo.firstname}</h1>
+          <h1 className="text-center text-white text-4xl md:text-6xl capitalize p-4">Bienvenue {getInfo.firstname}</h1>
           <p className="text-center text-white text-xl md:text-2xl">Que voulez-vous faire aujourd'hui?</p>
         </div>
 
@@ -57,7 +57,8 @@ const MyProfil = () => {
               </button>
 
               <button className="btn mb-2 bg-purple-700 text-white font-bold py-2 px-4 rounded">
-                Prendre rendez-vous
+              <a href='/booking'>Prendre rendez-vous</a>
+                
               </button>
               <button className="btn mb-2 bg-purple-700 text-white font-bold py-2 px-4 rounded">
                 Envoyer un message

@@ -127,7 +127,7 @@ const DashboardPatient = () => {
           src={
             selectedImage
               ? URL.createObjectURL(selectedImage)
-              : axios.put(`http://etiamsani-server.eddi.cloud:8080/patients/${idPatient}`, 
+              : axios.put(`https://my-therapist-api.up.railway.app/patients/${idPatient}`, 
                 selectedImage
               )
           }
