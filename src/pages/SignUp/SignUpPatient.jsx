@@ -24,7 +24,7 @@ const SingUpPatient = () => {
     // Envoyer les données du formulaire à l'API
 
     axios
-      .post("http://etiamsani-server.eddi.cloud:8080/auth/register-patient", {
+      .post("https://my-therapist-api.up.railway.app/auth/register-patient", {
         email,
         lastname,
         firstname,

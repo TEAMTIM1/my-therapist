@@ -43,7 +43,7 @@ const UpdateInfos = () => {
     console.log(data);
     try {
       // Remplacez 'URL_DE_VOTRE_API' par l'URL de votre API Swagger
-      const response = await axios.put(`http://etiamsani-server.eddi.cloud:8080/patients/${idPatient}`, data);
+      const response = await axios.put(`https://my-therapist-api.up.railway.app/patients/${idPatient}`, data);
 
       // Vérifie si la réponse est un succès
       if (response.status === 200) {

@@ -23,7 +23,7 @@ const SingUpTherapist = () => {
 
     // Envoyer les données du formulaire à l'API
     axios
-      .post("http://etiamsani-server.eddi.cloud:8080/auth/register-therapist", {
+      .post("https://my-therapist-api.up.railway.app/auth/register-therapist", {
         firstname,
         lastname,
         phonenumber,

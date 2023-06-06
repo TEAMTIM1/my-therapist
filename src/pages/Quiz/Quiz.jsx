@@ -39,7 +39,7 @@ const Quiz = () => {
         console.log(dataToSend);
         try {
             // Envoyer une requête POST avec les données d'authentification à l'API
-            const response = await axios.post("http://etiamsani-server.eddi.cloud:8080/patients/quizz", dataToSend);
+            const response = await axios.post("https://my-therapist-api.up.railway.app/patients/quizz", dataToSend);
             // Extraire le token d'authentification de la réponse et le stocker dans le stockage local
             const quizId = response.data[0].id
             localStorage.setItem('quizId', quizId)

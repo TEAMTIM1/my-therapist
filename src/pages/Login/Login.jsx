@@ -21,7 +21,7 @@ const LoginForm = () => {
 
         try {
             // Envoyer une requête POST avec les données d'authentification à l'API
-            const response = await axios.post("http://etiamsani-server.eddi.cloud:8080/auth/login", {
+            const response = await axios.post("https://my-therapist-api.up.railway.app/auth/login", {
                 email,
                 password,
 

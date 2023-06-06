@@ -10,7 +10,7 @@ const MyProfil = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://etiamsani-server.eddi.cloud:8080/patients/${idPatientfromLocalStorage}`);
+        const response = await axios.get(`https://my-therapist-api.up.railway.app/patients/${idPatientfromLocalStorage}`);
         setGetInfo(response.data);
       } catch (error) {
         console.error(error);
@@ -24,7 +24,7 @@ const MyProfil = () => {
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-        const response = await axios.get(`http://etiamsani-server.eddi.cloud:8080/patients/${idPatientfromLocalStorage}/appointments`);
+        const response = await axios.get(`https://my-therapist-api.up.railway.app/patients/${idPatientfromLocalStorage}/appointments`);
         setAppointments(response.data);
         console.log(response.data);
       } catch (error) {

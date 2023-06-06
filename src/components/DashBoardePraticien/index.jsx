@@ -71,7 +71,7 @@ const DashboardPatient = () => {
 
   useEffect(() => {
     axios
-      .get(`http://etiamsani-server.eddi.cloud:8080/patients/${idPatient}`)
+      .get(`https://my-therapist-api.up.railway.app/patients/${idPatient}`)
       .then((response) => {
         setMyProfil(response.data);
         console.log(response.data);

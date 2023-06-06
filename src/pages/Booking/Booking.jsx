@@ -65,7 +65,7 @@ const Booking = () => {
     console.log(data);
 
     try {
-      const response = await axios.post(`http://etiamsani-server.eddi.cloud:8080/therapists/${idTherapist}/appointments/patients/${idPatient}`, data);
+      const response = await axios.post(`https://my-therapist-api.up.railway.app/therapists/${idTherapist}/appointments/patients/${idPatient}`, data);
       console.log("Data has been sent:", response.data);
     } catch (error) {
       console.error("Error sending data:", error);
