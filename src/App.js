@@ -38,20 +38,20 @@ function App() {
 
       {/* Contact page */}
       <Route path='/contact' element={<ContactForm />} />
-      
-      {/* ListPraticien Page */}
-      <Route path='/listpraticiens' element={<ListPraticiens/>}/>
-      
-      <Route path='/myprofil' element={<MyProfil/>}/>
 
-      <Route path='/booking' element={<Booking/>}/>
-     
+      {/* ListPraticien Page */}
+      <Route path='/listpraticiens' element={<ListPraticiens />} />
+
+      <Route path='/myprofil' element={<MyProfil />} />
+
+      <Route path='/booking' element={<Booking />} />
+
       <Route path='/Dashboardpatient' element={<DashboardPatient />} />
 
       <Route path='/Updateprofil' element={<UpdateInfos />} />
 
       {/* Not found page */}
-      <Route path='*' element={<NotFoundPage />} />
+      <Route path='*' element={<NotFoundPage />} />d
     </Routes>
   );
 }
