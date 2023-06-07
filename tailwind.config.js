@@ -12,4 +12,3 @@ module.exports = {
   
   plugins: [require('daisyui'), ("flowbit/pluging")],
 }
-

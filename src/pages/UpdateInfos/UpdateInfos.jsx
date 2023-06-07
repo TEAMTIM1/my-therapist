@@ -3,7 +3,6 @@ import axios from 'axios';
 import DashboardPatient from "../../components/DashboardPatient/DashboardPatient";
 import { useNavigate } from "react-router-dom";
 
-
 const UpdateInfos = () => {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
