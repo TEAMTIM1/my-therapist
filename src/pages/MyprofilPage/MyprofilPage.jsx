@@ -85,25 +85,37 @@ const MyProfil = () => {
             {appointments.length > 0 ? (
               <ul>
                 {appointments.map((appointment, index) => (
-                  <li className="bg-[#DBCAF4] p-2 mb-2 rounded text-purple-900" key={index}>
-                    Votre prochain rendez-vous sera avec :{' '}
-                    <span className="font-bold">
-                      {appointment.therapistfirstname}
-                      {appointment.therapistname} le :{' '}
-                      {dayjs(appointment.appointmentbegin)
-                        .subtract(1, 'hour')
-                        .format('DD-MM-YYYY [à] HH:mm')}
-                      {/* Ici j'ai rajouter une logique qui permet d'afficher le type de RDV */}
-                      {appointment.audiosession
-                        ? ' via téléphone'
-                        : appointment.videosession
-                        ? ' via vidéo'
-                        : appointment.chatsession
-                        ? ' via chat'
-                        : appointment.sessionatoffice
-                        ? ' en personne'
-                        : null}{' '}
-                    </span>
+                  <li
+                    className="bg-[#DBCAF4] p-2 mb-2 rounded text-purple-900 flex items-center"
+                    key={index}>
+                    <img
+                      src={
+                        'https://my-therapist-api.up.railway.app/' +
+                        appointment.therapistprofilpicture
+                      }
+                      className="w-8 h-8 rounded-full m-2"
+                      alt=""
+                    />
+                    <div>
+                      <span className="font-bold">{appointment.therapistfirstname}</span>
+                      <span className="font-bold ml-1">{appointment.therapistname}</span>
+                      <span className="ml-2">
+                        le{' '}
+                        {dayjs(appointment.appointmentbegin)
+                          .subtract(1, 'hour')
+                          .format('DD-MM-YYYY [à] HH:mm')}
+                        {/* Ici j'ai rajouté une logique qui permet d'afficher le type de RDV */}
+                        {appointment.audiosession
+                          ? ' via téléphone'
+                          : appointment.videosession
+                          ? ' via vidéo'
+                          : appointment.chatsession
+                          ? ' via chat'
+                          : appointment.sessionatoffice
+                          ? ' en personne'
+                          : null}
+                      </span>
+                    </div>
                   </li>
                 ))}
               </ul>
