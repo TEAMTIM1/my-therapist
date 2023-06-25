@@ -27,7 +27,7 @@ const Modal = ({ isOpen, onClose, name, id, firstname, presentation, chat, visio
   // Récupération des avis lors du montage du composant
   useEffect(() => {
     axios
-      .get(`http://etiamsani-server.eddi.cloud:8080/therapists/${idTherapist}/reviews`)
+      .get(`https://my-therapist-api.up.railway.app/therapists/${idTherapist}/reviews`)
       .then((response) => {
         setGetReviews(response.data);
 
@@ -46,7 +46,7 @@ const Modal = ({ isOpen, onClose, name, id, firstname, presentation, chat, visio
   // Récupération des spécialités lors du montage du composant
   useEffect(() => {
     axios
-      .get(`http://etiamsani-server.eddi.cloud:8080/therapists/${id}/specialties`)
+      .get(`https://my-therapist-api.up.railway.app/therapists/${id}/specialties`)
       .then((response) => {
         setSpecialties(response.data);
       })
@@ -60,11 +60,8 @@ const Modal = ({ isOpen, onClose, name, id, firstname, presentation, chat, visio
 
   // Retour du JSX pour afficher la modale
   return (
-    <div
-      id="modal"
-      className={`fixed top-0 right-0 w-full h-screen z-20 flex ${elementClassName}`}>
-      <div id="modal-background" className="bg-white/80 w-2/3 h-full">
-      </div>
+    <div id="modal" className={`fixed top-0 right-0 w-full h-screen z-20 flex ${elementClassName}`}>
+      <div id="modal-background" className="bg-white/80 w-2/3 h-full"></div>
       <div
         id="modal-content"
         className="bg-white p-8 rounded shadow-lg w-1/3 flex flex-col justify-center items-center gap-4 ">

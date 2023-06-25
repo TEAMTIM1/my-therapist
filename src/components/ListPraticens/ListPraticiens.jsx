@@ -23,7 +23,7 @@ const ListPraticiens = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  //Fonction qui au click, filtre et stocke de la data depuis "posts" vers "data" et l'envoie en props à <Modal/> 
+  //Fonction qui au click, filtre et stocke de la data depuis "posts" vers "data" et l'envoie en props à <Modal/>
   const getDataOnClick = (
     lastname,
     firstname,
@@ -46,7 +46,7 @@ const ListPraticiens = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  // Récupération lors du montage du composant, de la "liste" de praticiens filtrée par l'algo 
+  // Récupération lors du montage du composant, de la "liste" de praticiens filtrée par l'algo
   useEffect(() => {
     axios
       .get(`https://my-therapist-api.up.railway.app/algorithm/me/get-therapists`, {
@@ -72,13 +72,12 @@ const ListPraticiens = () => {
         {/* Div pour afficher la liste des praticiens */}
         <div
           id="list"
-          className="flex flex-col justify-center items-center w-full p-4 min-h-screen bg-[#DBCAF4]
+          className="flex flex-col justify-center items-center w-full p-4 min-h-screen bg-purple-100
                       md:px-10">
-
           {/* Le titre */}
           <div id="list-title" className="text-center mb-4 p-10">
             <h1
-              className=" text-center text-white font-bold font-serif
+              className=" text-center text-purple-700  font-bold font-serif
                           md:text-6xl">
               Voici la liste des praticiens adaptée à vous
             </h1>
@@ -93,14 +92,14 @@ const ListPraticiens = () => {
               return (
                 <div key={key} className="card w-full glass">
                   <img
-                    src={'http://etiamsani-server.eddi.cloud:8080/' + post.profilpicture}
+                    src={'https://my-therapist-api.up.railway.app/' + post.profilpicture}
                     alt="profilpicture"
                     className=" w-full h-auto mx-auto rounded-t-lg object-fill 
                                 md:h-[500px] "
                   />
-                  <div className="absolute bottom-0 bg-white/20 card-body p-4 w-full h-24">
+                  <div className="absolute bottom-0 bg-white/40 card-body p-4 w-full h-24">
                     <h2
-                      className="card-title m-auto top-0 left-0 rigth-0 absolute font-bold text-base text-black
+                      className="card-title m-auto top-0 left-0 rigth-0 absolute font-bold text-base  text-purple-700 bg-purple-100/40
                                 md:text-xl">
                       {post.lastname} {post.firstname}
                     </h2>
@@ -147,10 +146,11 @@ const ListPraticiens = () => {
           </div>
 
           {/* Possibilité de refaire le quizz */}
-          <button id="tochange"
+          <button
+            id="tochange"
             className="justify-center border rounded-md w-[20%] my-8 py-4 text-xs text-center text-white  
                       bg-[#580abd] hover:bg-[#B983FF] transition duration-150 ease-in-out
-                       md:text-base" >
+                       md:text-base">
             <a href="/besoins">Changer mes besoins</a>
           </button>
 

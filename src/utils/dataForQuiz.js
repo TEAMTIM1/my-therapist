@@ -1,121 +1,121 @@
 const quizArray = [
   {
-    label: "Vous etes ?",
-    type: "radio",
-    name: "profile",
-    onChange: "reset",
+    label: 'Qui êtes-vous ?',
+    type: 'radio',
+    name: 'profile',
+    onChange: 'reset',
     answers: [
       {
-        label: "Vous êtes un particulier ?",
-        value: "personal"
+        label: 'Je suis un·e particulièr·e ',
+        value: 'personal'
       },
       {
-        label: "Souhaitez-vous faire intervenir un praticien dans votre entreprise ?",
-        value: "professional"
-      }
-    ],
-  },
-  {
-    condition: {
-      question: "profile",
-      value: ["personal"]
-    },
-    label: "Le rendez-vous est-il pour ?",
-    type: "radio",
-    name: "target",
-    answers: [
-      {
-        label: "Pour moi même",
-        value: "me"
-      },
-      {
-        label: "Pour un proche",
-        value: "relation"
-      },
-      {
-        label: "Pour mon enfant",
-        value: "child"
+        label: 'Je souhaite faire intervenir un·e praticien·ne dans mon entreprise.',
+        value: 'professional'
       }
     ]
   },
   {
     condition: {
-      question: "target",
-      value: ["me", "relation"]
+      question: 'profile',
+      value: ['personal']
     },
-    label: "Sur quoi vous souhaitez travailler",
-    type: "radio",
-    name: "subject",
+    label: 'Pour qui est le rendez-vous ?',
+    type: 'radio',
+    name: 'target',
     answers: [
-      { 
-        label: "Votre couple ?", 
-        value: "couple"
+      {
+        label: 'Pour moi même',
+        value: 'me'
       },
-      { 
-        label: "Un Accident ?",
-        value: "accident"
+      {
+        label: 'Pour un proche',
+        value: 'relation'
       },
-      { 
-        label: "Une Agression ?",
-        value: "agression"
-      },
-      { 
-        label: "Un Deuil ?", 
-        value: "death"
-      },
-      { 
-        label: "Une Phobie ?", 
-        value: "phobia"
-      },
-      { 
-        label: "Une Anxiété ?", 
-        value: "anxiety"
-      },
-      { 
-        label: "Une Depression ?", 
-        value: "depression"
-      },
-      { 
-        label: "Une Solitude ?", 
-        value: "loneliness"
-      },
-      { 
-        label: "Une Confiance/Estime de soi ?", 
-        value: "confidence"
-      },
-      { 
-        label: "Une Addictions ?", 
-        value: "addiction"
-      },
-      { 
-        label: "Une Evalution, un Bilan psychologique ?", 
-        value: "evaluation"
-      },
-      { 
-        label: "Votre Vie profesionnel ?", 
-        value: "professionnal"
+      {
+        label: 'Pour mon enfant',
+        value: 'child'
       }
     ]
   },
   {
     condition: {
-      question: "target",
-      value: "any"
+      question: 'target',
+      value: ['me', 'relation']
     },
-    label: "Quelle est genre de praticien vous souhaitez ?",
-    type: "radio",
-    name: "gender",
+    label: 'Sur quoi souhaitez-vous travailler ?',
+    type: 'radio',
+    name: 'subject',
     answers: [
       {
-        label: "Souhaitez-vous prendre rendez-vous pour un praticien femme ?",
-        value:  "Femme"
+        label: 'Mon couple',
+        value: 'couple'
       },
       {
-        label: "Souhaitez-vous prendre rendez-vous pour un praticien homme ?",
-        value:  "Homme"
+        label: 'Un accident',
+        value: 'accident'
+      },
+      {
+        label: 'Une agression',
+        value: 'agression'
+      },
+      {
+        label: 'Un Deuil',
+        value: 'death'
+      },
+      {
+        label: 'Une Phobie',
+        value: 'phobia'
+      },
+      {
+        label: "De l'anxiété",
+        value: 'anxiety'
+      },
+      {
+        label: 'Une dépression',
+        value: 'depression'
+      },
+      {
+        label: 'de la solitude',
+        value: 'loneliness'
+      },
+      {
+        label: 'Manque de confiance en soi/estime de soi',
+        value: 'confidence'
+      },
+      {
+        label: 'Une addiction',
+        value: 'addiction'
+      },
+      {
+        label: 'Une evalution/Un bilan psychologique',
+        value: 'evaluation'
+      },
+      {
+        label: 'Ma vie professionnelle',
+        value: 'professionnal'
       }
     ]
   },
+  {
+    condition: {
+      question: 'target',
+      value: 'any'
+    },
+    label: 'Quel est le sexe du praticien que vous souhaitez ?',
+    type: 'radio',
+    name: 'gender',
+    answers: [
+      {
+        label: 'Je souhaite que le praticien soit une femme',
+        value: 'Femme'
+      },
+      {
+        label: 'Je souhaite que le praticien soit un homme',
+        value: 'Homme'
+      }
+    ]
+  }
   // {
   //   label: "Vous avez autre chose à nous dire ?",
   //   type: "text",
@@ -136,15 +136,10 @@ const quizArray = [
   //   type: 'textarea',
   //   name: 'message'
   // }
-]
-
-
-
-
+];
 
 // const quizArray = [
-  
+
 //   ];
-  
-  
- export default quizArray;
+
+export default quizArray;
