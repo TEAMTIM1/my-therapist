@@ -61,70 +61,66 @@ const Modal = ({ isOpen, onClose, name, id, firstname, presentation, chat, visio
   // Retour du JSX pour afficher la modale
   return (
     <div id="modal" className={`fixed top-0 right-0 w-full h-screen z-20 flex ${elementClassName}`}>
-      <div id="modal-background" className="bg-white/80 w-2/3 h-full"></div>
+      <div id="modal-background" className="bg-white/80 w-full h-full"></div>
       <div
         id="modal-content"
-        className="bg-white p-8 rounded shadow-lg w-1/3 flex flex-col justify-center items-center gap-4 ">
-        <h1 id="modal-title" className=" text-purple-600 text-2xl font-bold mb-4">
+        className="bg-white p-8 rounded shadow-lg lg:w-1/2 xl:w-1/3 flex flex-col justify-start items-center gap-4 h-full">
+        <h1
+          id="modal-title"
+          className="text-purple-600 text-2xl font-bold lg:mb-4 text-center mt-5">
           {name} {firstname}
         </h1>
 
         <div className="w-full">
-          <h2 className=" text-xl font-semibold ">Médias</h2>
-          <div className="grid grid-flow-col gap-4">
-            <ul className=" bg-white p-4 rounded flex justify-center gap-4">
-              <li className="text-gray-700">{chat ? <BiMessageRoundedDetail size={30} /> : ''}</li>
-              <li className="text-gray-700">{phone ? <MdSmartphone size={30} /> : ''}</li>
-              <li className="text-gray-700">{visio ? <BsPersonVideo size={30} /> : ''}</li>
-            </ul>
+          <h2 className="lg:text-xl  text-xs font-semibold -mt-2">Médias</h2>
+          <div className="grid grid-cols-2 gap-4">
+            {chat && <BiMessageRoundedDetail size={30} className="text-gray-700" />}
+            {phone && <MdSmartphone size={30} className="text-gray-700" />}
+            {visio && <BsPersonVideo size={30} className="text-gray-700" />}
           </div>
         </div>
 
         <div className="w-full">
-          <h2 className=" text-xl font-semibold">Domaines de compéténces</h2>
+          <h2 className="lg:text-xl text-xs font-semibold">Domaines de compétences</h2>
           {specialties.map((specialty) => (
-            <div key={specialty.id} className="bg-[#DBCAF4]/50 p-4 mt-4 rounded text-center ">
+            <div key={specialty.id} className="bg-[#DBCAF4]/50 p-0 mt-2 rounded text-center">
               {specialty.label}
             </div>
           ))}
         </div>
 
         <div className="w-full">
-          <h2 className=" text-xl font-semibold">A propos</h2>
-          <p className="text-gray-800 mt-2 whitespace-nowrap overflow-hidden">{presentation}</p>
+          <h2 className="lg:text-xl text-xs font-semibold">A propos</h2>
+          <p className="text-gray-800 mt-1 overflow-y-auto max-h-10">{presentation}</p>
         </div>
 
-        <div className="w-full   ">
-          <h2 className="text-xl font-semibold">Avis</h2>
-          <div className="bg-[#DBCAF4]/50 items-center p-4 mt-4 rounded w-full  flex gap-3">
-            {totalGoodScore} <FiThumbsUp size={30} /> {totalBadScore}
-            <FiThumbsDown size={30} />
+        <div className="w-full">
+          <h2 className="lg:text-xl font-semibold text-xs">Avis</h2>
+          <div className="bg-[#DBCAF4]/50 items-center lg:p-4 p-0 mt-1 rounded w-full flex gap-3">
+            {totalGoodScore} <FiThumbsUp size={20} /> {totalBadScore} <FiThumbsDown size={20} />
           </div>
         </div>
 
+        <h2 className="lg:text-xl text-xs font-semibold">Commentaires</h2>
         <div className="w-full overflow-y-scroll">
-          <h2 className="text-xl font-semibold">Commentaires</h2>
-          {getReviews.map((review) => {
-            return (
-              <div className="bg-[#DBCAF4]/50 p-4 mt-4 rounded  ">
-                <h3 className="font-semibold">
-                  {review.id}
-                  {review.patient_firstname}
-                </h3>
-                <p className="text-gray-700 ">{review.patient_messages}</p>
-              </div>
-            );
-          })}
+          {getReviews.map((review) => (
+            <div key={review.id} className="bg-[#DBCAF4]/50 p-0 mt-0 rounded">
+              <h3 className="font-semibold">
+                {review.id} {review.patient_firstname}
+              </h3>
+              <p className="text-gray-700">{review.patient_messages}</p>
+            </div>
+          ))}
         </div>
 
         <button
-          className=" bg-[#B983FF] text-white px-4 py-2 rounded hover:bg-[#580abd] transition duration-150 ease-in-out "
+          className="bg-[#B983FF] text-white px-4 py-2 rounded hover:bg-[#580abd] transition duration-150 ease-in-out"
           onClick={handleClick}>
           Prendre rendez-vous
         </button>
 
         <button
-          className="bg-[#B983FF] text-white px-4 py-2 rounded absolute top-4 right-4 hover:bg-[#580abd] transition duration-150 ease-in-out"
+          className="bg-[#B983FF] text-white px-4 lg:py-2 py-1 rounded absolute top-4 right-4 hover:bg-[#580abd] transition duration-150 ease-in-out"
           onClick={onClose}>
           Fermer
         </button>

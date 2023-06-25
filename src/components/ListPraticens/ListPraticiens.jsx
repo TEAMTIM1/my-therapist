@@ -78,7 +78,7 @@ const ListPraticiens = () => {
           <div id="list-title" className="text-center mb-4 p-10">
             <h1
               className=" text-center text-purple-700  font-bold font-serif
-                          md:text-6xl">
+                          md:text-6xl text-3xl mt-2">
               Voici la liste des praticiens adaptée à vous
             </h1>
           </div>
@@ -94,13 +94,13 @@ const ListPraticiens = () => {
                   <img
                     src={'https://my-therapist-api.up.railway.app/' + post.profilpicture}
                     alt="profilpicture"
-                    className=" w-full h-auto mx-auto rounded-t-lg object-fill 
+                    className=" w-[420px] h-auto mx-auto rounded-t-lg object-fill 
                                 md:h-[500px] "
                   />
-                  <div className="absolute bottom-0 bg-white/40 card-body p-4 w-full h-24">
+                  <div className="absolute bottom-0 bg-white/40 card-body p-4 w-full h-20">
                     <h2
-                      className="card-title m-auto top-0 left-0 rigth-0 absolute font-bold text-base  text-purple-700 bg-purple-100/40
-                                md:text-xl">
+                      className="card-title m-auto top-0 left-0 rigth-0 absolute font-bold text-base  text-purple-700 bg-purple-100/40 rounded p-0.5
+                                md:text-xl lg:ml-8">
                       {post.lastname} {post.firstname}
                     </h2>
 
