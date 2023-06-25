@@ -58,23 +58,23 @@ const MyProfil = () => {
             <div className="grid grid-cols-2 justify-center gap-4">
               <button
                 id="Home-btn"
-                className="btn mb-2 bg-purple-700 text-white font-bold py-2 px-4 rounded">
-                <a href="/listpraticiens">Voir votre liste de Psy</a>
+                className="btn mb-2 bg-purple-700 text-white font-bold py-2 px-4 rounded-xl border-none">
+                <a href="/listpraticiens">Voir ma liste de Psy</a>
               </button>
 
               <button
                 id="Home-btn"
-                className="btn mb-2 bg-purple-700 text-white font-bold py-2 px-4 rounded">
+                className="btn mb-2 bg-purple-700 text-white font-bold py-2 px-4 rounded-xl border-none">
                 <a href="updateprofil">Modifier mes informations</a>
               </button>
 
-              <button className="btn mb-2 bg-purple-700 text-white font-bold py-2 px-4 rounded">
+              <button className="btn mb-2 bg-purple-700 text-white font-bold py-2 px-4 rounded-xl border-none">
                 <a href="/booking">Prendre rendez-vous</a>
               </button>
-              <button className="btn mb-2 bg-purple-700 text-white font-bold py-2 px-4 rounded">
+              <button className="btn mb-2 bg-purple-700 text-white font-bold py-2 px-4 rounded-xl border-none">
                 Envoyer un message
               </button>
-              <button className="btn mb-2 bg-purple-700 text-white font-bold py-2 px-4 rounded">
+              <button className="btn mb-2 bg-purple-700 text-white font-bold py-2 px-4 rounded-xl border-none">
                 Rédiger un avis
               </button>
             </div>

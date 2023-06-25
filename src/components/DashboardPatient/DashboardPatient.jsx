@@ -44,7 +44,6 @@ const DashboardPatient = () => {
       });
   }, [idPatient]);
 
-  console.log(myProfil.profilpicture);
   return (
     <>
       <AiOutlineMenu
@@ -85,7 +84,7 @@ const DashboardPatient = () => {
       )}
       {/* SideBarPatient desktop version */}
 
-      <div className="w-1/6 hidden md:block  bg-[#DBCAF4] ">
+      <div className="w-1/6 hidden md:block  bg-[#DBCAF4]">
         <img
           className="mx-auto my-8 object-cover w-32 h-32 rounded-full"
           src={`https://my-therapist-api.up.railway.app/${myProfil.profilpicture}`}
@@ -105,27 +104,27 @@ const DashboardPatient = () => {
               <div className=" grid grid-flow-row">
                 <a
                   href="/myprofil"
-                  className="text-white  bg-violet-900 rounded-full focus:ring-4 focus:outline-none font-medium text-sm px-4 py-2 my-40 text-center mr-2 mb-2">
+                  className="text-white  bg-purple-700 rounded-full focus:ring-4 focus:outline-none font-medium text-sm px-4 py-2 my-40 text-center mr-2 mb-2">
                   Mon profil
                 </a>
                 <a
                   href="/rendezvous"
-                  className="text-white bg-violet-900  rounded-full focus:ring-4 focus:outline-none font-medium text-sm px-4 py-2 my-8 text-center mr-2 mb-2">
+                  className="text-white bg-purple-700  rounded-full focus:ring-4 focus:outline-none font-medium text-sm px-4 py-2 my-8 text-center mr-2 mb-2">
                   Mes Documents
                 </a>
                 <a
                   href="/messages"
-                  className="text-white bg-violet-900  rounded-full focus:ring-4 focus:outline-none font-medium text-sm px-4 py-2 my-8 text-center mr-2 mb-2">
+                  className="text-white bg-purple-700  rounded-full focus:ring-4 focus:outline-none font-medium text-sm px-4 py-2 my-8 text-center mr-2 mb-2">
                   Messages
                 </a>
                 <a
                   href="/notifications"
-                  className="text-white bg-violet-900  rounded-full focus:ring-4 focus:outline-none font-medium text-sm px-4 py-2 my-8 text-center mr-2 mb-2">
+                  className="text-white bg-purple-700  rounded-full focus:ring-4 focus:outline-none font-medium text-sm px-4 py-2 my-8 text-center mr-2 mb-2">
                   Notifications
                 </a>
                 <button
                   onClick={handleDeconnect}
-                  className="text-white bg-violet-900  rounded-full font-medium text-sm px-4 py-2 my-8 text-center mr-2 mb-2">
+                  className="text-red-600 bg-red-300  rounded-full font-medium text-sm px-4 py-2 my-8 text-center mr-2 mb-2">
                   Se déconnecter
                 </button>
               </div>
