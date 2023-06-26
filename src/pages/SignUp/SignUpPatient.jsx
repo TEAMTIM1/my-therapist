@@ -1,22 +1,20 @@
-import { useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const SingUpPatient = () => {
-
-  const [firstname, setFirstName] = useState("");
-  const [lastname, setLastName] = useState("");
-  const [phonenumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
-  const [streetname, setStreetAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [zipcode, setPostalCode] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [firstname, setFirstName] = useState('');
+  const [lastname, setLastName] = useState('');
+  const [phonenumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState('');
+  const [streetname, setStreetAddress] = useState('');
+  const [city, setCity] = useState('');
+  const [zipcode, setPostalCode] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const navigate = useNavigate();
 
-  const quizz_id = localStorage.getItem('quizId')
-
+  const quizz_id = localStorage.getItem('quizId');
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,7 +22,7 @@ const SingUpPatient = () => {
     // Envoyer les données du formulaire à l'API
 
     axios
-      .post("https://my-therapist-api.up.railway.app/auth/register-patient", {
+      .post('https://my-therapist-api.up.railway.app/auth/register-patient', {
         email,
         lastname,
         firstname,
@@ -35,29 +33,31 @@ const SingUpPatient = () => {
         zipcode,
         city,
         quizz_id
-
       })
       .then((response) => {
         console.log(response.data);
-        const idPatient = response.data.id
-        localStorage.setItem('idPatient', idPatient)
+        const idPatient = response.data.id;
+        localStorage.setItem('idPatient', idPatient);
         console.log(idPatient);
-        navigate('/login')
+        navigate('/login');
       })
       .catch((error) => {
         console.log(error);
       });
-
   };
 
   return (
     <form onSubmit={handleSubmit} className="h-screen">
       <div className=" w-full h-full grid grid-flow-row bg-[#DBCAF4] text-xs sm:text-lg justify-center">
-        <h2 className=" font-semibold leading-7 text-gray-900 text-xs sm:text-lg p-4">Informations Personelles</h2>
+        <h2 className=" font-semibold leading-7 text-gray-900 text-xs sm:text-lg p-4">
+          Informations Personnelles
+        </h2>
 
         <div className="grid grid-cols-1 gap-x-6 sm:gap-y-2 sm:grid-cols-6 sm:p-4">
           <div className="sm:col-span-3">
-            <label htmlFor="firstname" className="block text-sm font-medium leading-6 text-gray-900">
+            <label
+              htmlFor="firstname"
+              className="block text-sm font-medium leading-6 text-gray-900">
               Prénom
             </label>
             <div className="mt-2">
@@ -104,7 +104,9 @@ const SingUpPatient = () => {
             </div>
           </div>
           <div className="sm:col-span-3">
-            <label htmlFor="confirmPassword" className="block text-sm font-medium leading-6 text-gray-900">
+            <label
+              htmlFor="confirmPassword"
+              className="block text-sm font-medium leading-6 text-gray-900">
               Confirmer le Mot de passe
             </label>
             <div className="mt-2">
@@ -167,7 +169,9 @@ const SingUpPatient = () => {
           </div>
 
           <div className="col-span-full">
-            <label htmlFor="streetname" className="block text-sm font-medium leading-6 text-gray-900">
+            <label
+              htmlFor="streetname"
+              className="block text-sm font-medium leading-6 text-gray-900">
               Numéro de rue
             </label>
             <div className="mt-2">
@@ -183,7 +187,9 @@ const SingUpPatient = () => {
           </div>
 
           <div className="sm:col-span-2">
-            <label htmlFor="phonenumber" className="block text-sm font-medium leading-6 text-gray-900">
+            <label
+              htmlFor="phonenumber"
+              className="block text-sm font-medium leading-6 text-gray-900">
               Numéro téléphone
             </label>
             <div className="mt-2">
@@ -197,10 +203,12 @@ const SingUpPatient = () => {
             </div>
           </div>
         </div>
-        <button type="submit" className="btn btn-sm my-3 w-full bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/50 hover:bg-[#DBCAF4]">Confirmer</button>
+        <button
+          type="submit"
+          className="btn btn-sm my-3 w-full bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/50 hover:bg-[#DBCAF4]">
+          Confirmer
+        </button>
       </div>
-
-
     </form>
   );
 };

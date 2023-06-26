@@ -26,7 +26,7 @@ const DashboardPatient = () => {
   };
 
   const handleDeconnect = () => {
-    localStorage.clear('token');
+    localStorage.clear();
     navigate('/');
   };
 
