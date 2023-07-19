@@ -14,7 +14,7 @@ import Quiz from './pages/Quiz/Quiz';
 import SingUpPatient from './pages/SignUp/SignUpPatient';
 import Booking from './pages/Booking/Booking';
 import UpdateInfos from './pages/UpdateInfos/UpdateInfos';
-
+import MyProfilPraticien from './pages/ProfilPagePraticien';
 
 
 function App() {
@@ -47,6 +47,8 @@ function App() {
       <Route path='/booking' element={<Booking />} />
 
       <Route path='/Dashboardpatient' element={<DashboardPatient />} />
+
+      <Route path='/myprofilpraticien' element={<MyProfilPraticien />} />
 
       <Route path='/Updateprofil' element={<UpdateInfos />} />
 

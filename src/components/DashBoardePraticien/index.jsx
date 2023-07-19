@@ -4,54 +4,18 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { MdDarkMode } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 
-const DashboardPatient = () => {
+// import profilImage from '../../assets/image/image.png'
+
+const DashBoardPraticien = () => {
   const [nav, setNav] = useState(false);
   const [hidden, setHidden] = useState(true);
   const [myProfil, setMyProfil] = useState([]);
-  const [selectedImage, setSelectedImage] = useState(null);
-  console.log(myProfil);
 
   const navigate = useNavigate()
 
-  const idPatient = localStorage.getItem('idPatient')
-  /* 
-    const handleDragEnter = (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-    };
-  
-    const handleDragLeave = (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-    };
-  
-    const handleDragOver = (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-    };
-  
-    const handleDrop = (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      const file = event.dataTransfer.files[0];
-      setSelectedImage(file);
-      const formData = new FormData();
-      formData.append("image", file);
-      axios
-        .post(`http://etiamsani-server.eddi.cloud:8080/patients/${idPatient}/upload`, formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.log("error", error);
-        });
-    };
-  
-   */
+
+  const idPraticien = localStorage.getItem('idPraticien')
+
   const handleNav = () => {
     setNav(!nav);
     setHidden(!hidden);
@@ -69,9 +33,11 @@ const DashboardPatient = () => {
 
   const elementClassName = hidden ? "hidden" : "";
 
+
+
   useEffect(() => {
     axios
-      .get(`https://my-therapist-api.up.railway.app/patients/${idPatient}`)
+      .get(`https://my-therapist-api.up.railway.app/praticien/${idPraticien}`)
       .then((response) => {
         setMyProfil(response.data);
         console.log(response.data);
@@ -79,7 +45,7 @@ const DashboardPatient = () => {
       .catch((error) => {
         console.log('error', error);
       });
-  }, []);
+  }, [idPraticien]);
 
   console.log(myProfil.profilpicture);
   return (
@@ -96,7 +62,7 @@ const DashboardPatient = () => {
               <a className href="/login">Mon profil</a>
             </li>
             <li className="border-b border-gray-400 my-8 uppercase">
-              <a href="/login">Mes rendez-vous</a>
+              <a href="/login">Mes Documents</a>
             </li>
             <li className="border-b border-gray-400 my-8 uppercase">
               <a href="/login">Messages</a>
@@ -105,10 +71,7 @@ const DashboardPatient = () => {
               <a href="/login">Notifications</a>
             </li>
             <li className="border-b border-gray-400 my-8 uppercase">
-              <a href="/login">Réglages</a>
-            </li>
-            <li className="border-b border-gray-400 my-8 uppercase">
-              <a href="/register">Se déconnecter</a>
+              <a href="/register">déconnexion</a>
             </li>
             <li>
               <button onClick={handleClick} className=''><MdDarkMode size={25} /></button>
@@ -120,27 +83,12 @@ const DashboardPatient = () => {
       )}
       {/* SideBarPatient desktop version */}
 
-      <div className="w-1/6 hidden md:block bg-[#B983FF] ">
 
-        <img
-          className="mx-auto my-8 object-cover w-32 h-32 rounded-full"
-          src={
-            selectedImage
-              ? URL.createObjectURL(selectedImage)
-              : axios.put(`https://my-therapist-api.up.railway.app/patients/${idPatient}`,
-                selectedImage
-              )
-          }
-          alt=""
-        />
-        {/*  <div
-          onDragEnter={handleDragEnter}
-          onDragLeave={handleDragLeave}
-          onDragOver={handleDragOver}
-          onDrop={handleDrop}
-        >
-          <p className=' text-white text-center'>Faites glisser une image ici pour l'enregistrer</p>
-        </div> */}
+      <div className="w-1/6 hidden md:block  bg-[#A16EE7] ">
+
+
+
+        <img className='mx-auto my-8 object-cover w-32 h-32 rounded-full' src={`https://my-therapist-api.up.railway.app/${myProfil.profilpicture}`} alt="" />
 
         <h1 className='mx-auto mt-4 text-center'>{myProfil.firstname} {myProfil.lastname}</h1>
 
@@ -152,18 +100,20 @@ const DashboardPatient = () => {
               </div>
               <div className=' grid grid-flow-row'>
                 <a href="/myprofil" className="text-white  bg-violet-900 rounded-full focus:ring-4 focus:outline-none font-medium text-sm px-4 py-2 my-40 text-center mr-2 mb-2">Mon profil</a>
-                <a href="/rendezvous" className="text-white bg-violet-900  rounded-full focus:ring-4 focus:outline-none font-medium text-sm px-4 py-2 my-8 text-center mr-2 mb-2">Mes rendez-vous</a>
+                <a href="/rendezvous" className="text-white bg-violet-900  rounded-full focus:ring-4 focus:outline-none font-medium text-sm px-4 py-2 my-8 text-center mr-2 mb-2">Mes Documents</a>
                 <a href="/messages" className="text-white bg-violet-900  rounded-full focus:ring-4 focus:outline-none font-medium text-sm px-4 py-2 my-8 text-center mr-2 mb-2">Messages</a>
                 <a href="/notifications" className="text-white bg-violet-900  rounded-full focus:ring-4 focus:outline-none font-medium text-sm px-4 py-2 my-8 text-center mr-2 mb-2">Notifications</a>
-                <a href="/reglages" className="text-white bg-violet-900  rounded-full focus:ring-4 focus:outline-none font-medium text-sm px-4 py-2 my-8 text-center mr-2 mb-2">Réglages</a>
-                <button onClick={handleDeconnect} className="text-white bg-violet-900  rounded-full font-medium text-sm px-4 py-2 my-8 text-center mr-2 mb-2">Se déconnecter</button>
+                <button onClick={handleDeconnect} className="text-white bg-violet-900  rounded-full font-medium text-sm px-4 py-2 my-8 text-center mr-2 mb-2">déconnexion</button>
               </div>
+
             </div>
           </aside>
         </div>
       </div>
+
+
     </>
   );
 };
 
-export default DashboardPatient;
+export default DashBoardPraticien;

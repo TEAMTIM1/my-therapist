@@ -23,9 +23,9 @@ const Home = () => { // Définition du composant Home
     <>
       <Navbar /> {/* Affiche la barre de navigation */}
       
-      <div id="Home"  className='h-screen  flex flex-col justify-center flex-wrap bg-[#DBCAF4]'>
+      <div id="Home"  className='  flex flex-col justify-center flex-wrap bg-[#DBCAF4]'>
         {/* Div principale pour organiser le contenu de la page */}
-        <div id="Home-items" className="px-4 grid md:grid-cols-2 md:justify-items-start md:content-between md:justify-start mt-36">
+        <div id="Home-items" className="px-4 grid md:grid-cols-2 md:justify-items-start md:content-between md:justify-start mt-36 h-screen">
           {/* Deuxième div pour organiser le contenu en deux colonnes sur les écrans moyens et plus grands */}
           <div id="Home--image-container" className="pb-4 md:pl-12">
             {/* Div pour afficher l'image */}

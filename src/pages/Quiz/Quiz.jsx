@@ -43,7 +43,7 @@ const Quiz = () => {
             // Extraire le token d'authentification de la réponse et le stocker dans le stockage local
             const quizId = response.data[0].id
             localStorage.setItem('quizId', quizId)
-
+            console.log(response.data);
         } catch (error) {
             // Afficher une erreur si la requête échoue
             console.error('Error:', error);
