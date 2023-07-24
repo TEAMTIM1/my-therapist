@@ -14,11 +14,6 @@ const Navbar = () => {
     sethidden(!hidden);
   };
 
-  const handelClick = () => {
-    sethidden(true)
-    setNav(!nav)
-  };
-
   const elementClassName = hidden ? "hidden" : "";
 
   return (
@@ -30,15 +25,12 @@ const Navbar = () => {
       />
       {nav ? (
         <div className={`fixed w-full h-screen bg-white/90 flex flex-col justify-center items-center z-20 ${elementClassName} md:hidden`}>
-          <ul className="flex flex-col items-center justify-between min-h-[250px]">
+          <ul className="flex flex-col items-center justify-between gap-6">
             <li className="border-b border-gray-400 my-8 uppercase">
               <a href="/login">Connexion</a>
             </li>
             <li className="border-b border-gray-400 my-8 uppercase">
               <a href="/quizz">Inscription</a>
-            </li>
-            <li>
-              <button onClick={handelClick}><MdDarkMode size={25} /></button>
             </li>
           </ul>
         </div>
