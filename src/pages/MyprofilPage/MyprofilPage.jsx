@@ -2,6 +2,7 @@ import axios from 'axios';
 import dayjs from 'dayjs';
 import React, { useEffect, useState } from 'react';
 import DashboardPatient from '../../components/DashboardPatient/DashboardPatient';
+import { IoTrashBinSharp } from 'react-icons/io5';
 
 const MyProfil = () => {
   const [getInfo, setGetInfo] = useState('');
@@ -38,6 +39,21 @@ const MyProfil = () => {
 
     fetchAppointments();
   }, [idPatientfromLocalStorage]);
+
+  const handleDelete = async (appointmentId) => {
+    console.log(appointmentId);
+    try {
+      const response = await axios.delete(
+        `https://my-therapist-api.up.railway.app/patients/appointment/${appointmentId}`
+      );
+      console.log(response.data);
+      setAppointments((prevAppointments) =>
+        prevAppointments.filter((appointment) => appointment.appointmentid !== appointmentId)
+      );
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className="flex flex-col md:flex-row">
@@ -96,7 +112,7 @@ const MyProfil = () => {
                       className="w-8 h-8 rounded-full m-2"
                       alt=""
                     />
-                    <div>
+                    <div className="flex">
                       <span className="font-bold">{appointment.therapistfirstname}</span>
                       <span className="font-bold ml-1">{appointment.therapistname}</span>
                       <span className="ml-2">
@@ -115,6 +131,9 @@ const MyProfil = () => {
                           ? ' en personne'
                           : null}
                       </span>
+                      <div className="mt-1 ml-2 text-lg hover:text-white">
+                        <IoTrashBinSharp onClick={() => handleDelete(appointment.appointmentid)} />
+                      </div>
                     </div>
                   </li>
                 ))}
