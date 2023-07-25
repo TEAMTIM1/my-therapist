@@ -18,22 +18,31 @@ const SingUpPatient = () => {
   const [message, setMessage] = useState('');
   const [progress, setProgress] = useState('');
   const navigate = useNavigate();
-  const [strengthChecks, setStrengthChecks] = useState({
+
+  const initialChecks = {
     length: 0,
     hasUpperCase: false,
     hasLowerCase: false,
     hasDigit: false,
     hasSpecialChar: false
-  });
+  };
+
+  const [strengthChecks, setStrengthChecks] = useState(initialChecks);
+
+  const checkPasswordStrength = (passwordValue) => {
+    const checks = {
+      length: passwordValue.length >= 8,
+      hasUpperCase: /[A-Z]+/.test(passwordValue),
+      hasLowerCase: /[a-z]+/.test(passwordValue),
+      hasDigit: /[0-9]+/.test(passwordValue),
+      hasSpecialChar: /[^A-Za-z0-9]+/.test(passwordValue)
+    };
+
+    setStrengthChecks(checks);
+  };
 
   const handlePassword = (passwordValue) => {
-    const strengthChecks = {
-      length: 0,
-      hasUpperCase: false,
-      hasLowerCase: false,
-      hasDigit: false,
-      hasSpecialChar: false
-    };
+    checkPasswordStrength(passwordValue);
 
     const checks = {
       length: passwordValue.length >= 8,
@@ -59,8 +68,6 @@ const SingUpPatient = () => {
     setPassword(passwordValue);
     setProgress(`${(verifiedList.length / 5) * 100}%`);
     setMessage(strength);
-
-    console.log('verifiedList: ', `${(verifiedList.length / 5) * 100}%`);
   };
 
   const getActiveColor = (type) => {
