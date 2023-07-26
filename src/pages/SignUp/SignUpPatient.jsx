@@ -126,7 +126,7 @@ const SingUpPatient = () => {
             <label
               htmlFor="firstname"
               className="block text-sm font-medium leading-6 text-gray-900">
-              Prénom
+              Prénom *
             </label>
             <div className="mt-2">
               <input
@@ -142,7 +142,7 @@ const SingUpPatient = () => {
 
           <div className="sm:col-span-3">
             <label htmlFor="lastname" className="block text-sm font-medium leading-6 text-gray-900">
-              Nom
+              Nom *
             </label>
             <div className="mt-2">
               <input
@@ -158,7 +158,7 @@ const SingUpPatient = () => {
 
           <div className="sm:col-span-3">
             <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-              Mot de passe
+              Mot de passe *
             </label>
             <div className="mt-2">
               <div className="flex">
@@ -223,7 +223,7 @@ const SingUpPatient = () => {
             <label
               htmlFor="confirmPassword"
               className="block text-sm font-medium leading-6 text-gray-900">
-              Confirmer le Mot de passe
+              Confirmer le Mot de passe *
             </label>
             <div className="mt-2 flex">
               <input
@@ -241,7 +241,7 @@ const SingUpPatient = () => {
           </div>
           <div className="sm:col-span-2 sm:col-start-1">
             <label htmlFor="city" className="block text-sm font-medium leading-6 text-gray-900">
-              Ville
+              Ville *
             </label>
             <div className="mt-2">
               <input
@@ -257,7 +257,7 @@ const SingUpPatient = () => {
 
           <div className="sm:col-span-2">
             <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-              Email
+              Email *
             </label>
             <div className="mt-2">
               <input
@@ -273,7 +273,7 @@ const SingUpPatient = () => {
 
           <div className="sm:col-span-2">
             <label htmlFor="zipcode" className="block text-sm font-medium leading-6 text-gray-900">
-              Code Postal
+              Code Postal *
             </label>
             <div className="mt-2">
               <input
@@ -291,7 +291,7 @@ const SingUpPatient = () => {
             <label
               htmlFor="streetname"
               className="block text-sm font-medium leading-6 text-gray-900">
-              Numéro de rue
+              Adresse postale *
             </label>
             <div className="mt-2">
               <input
@@ -309,7 +309,7 @@ const SingUpPatient = () => {
             <label
               htmlFor="phonenumber"
               className="block text-sm font-medium leading-6 text-gray-900">
-              Numéro téléphone
+              Numéro téléphone *
             </label>
             <div className="mt-2">
               <input
