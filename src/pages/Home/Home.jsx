@@ -13,33 +13,39 @@ const Home = () => {
 
   const isLogged = localStorage.getItem('token');
 
- 
-    if (isLogged) {
-      navigate('/myprofil'); // Redirige vers la page de profil si l'utilisateur est connecté
-    }
- 
+  if (isLogged) {
+    navigate('/myprofil'); // Redirige vers la page de profil si l'utilisateur est connecté
+  }
 
   return (
     // Retourne les éléments JSX pour afficher la page d'accueil
     <>
       <Navbar /> {/* Affiche la barre de navigation */}
-      
-      <div id="Home"  className=' w-screen flex flex-col justify-center flex-wrap bg-[#DBCAF4]'>
+      <div id="Home" className=" w-screen flex flex-col justify-center flex-wrap bg-[#DBCAF4]">
         {/* Div principale pour organiser le contenu de la page */}
-        <div id="Home-items" className="px-4 grid md:grid-cols-2 md:justify-items-start md:content-between md:justify-start md:mt-36">
+        <div
+          id="Home-items"
+          className="px-4 grid md:grid-cols-2 md:justify-items-start md:content-between md:justify-start md:mt-36">
           {/* Deuxième div pour organiser le contenu en deux colonnes sur les écrans moyens et plus grands */}
           <div id="Home--image-container" className="pb-4 md:pl-12">
             {/* Div pour afficher l'image */}
-            <img id="Home--image" className="rounded-lg md:w-[90%]" src={image} alt="" />
+            <img
+              id="Home--image"
+              className="rounded-lg md:w-[90%] lg:w-[70%] lg:ml-10"
+              src={image}
+              alt=""
+            />
             {/* L'image elle-même */}
           </div>
-          <div id="Home--text-container" className="grid justify-items-center">
+          <div id="Home--text-container" className="grid justify-items-center lg:mr-28">
             {/* Div pour afficher le texte */}
-            <h1 id="Home--title" className="pb-4 md:text-3xl font-bold text-center">
+            <h1
+              id="Home--title"
+              className="pb-4 md:text-3xl font-bold text-center lg:text-4xl lg:mt-28">
               Trouvez le psychologue idéal avec nous
             </h1>
             {/* Titre de la page */}
-            <h1 id="Home--description" className="md:text-2xl text-center leading-relaxed">
+            <h1 id="Home--description" className="md:text-2xl text-center leading-relaxed ">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo ipsa voluptatum velit.
               Porro optio voluptatibus exercitationem. Illo saepe inventore sunt maxime doloribus
               quidem accusamus quia voluptate veritatis dolorum. Voluptas, quod.
