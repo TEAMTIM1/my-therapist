@@ -9,6 +9,30 @@ const MyProfil = () => {
   const idPatientfromLocalStorage = localStorage.getItem('idPatient');
 
   useEffect(() => {
+    // Ajouter un intercepteur de réponse à Axios
+    const responseInterceptor = axios.interceptors.response.use(
+      (response) => {
+        // Si la réponse est réussie, renvoyer la réponse directement
+        return response;
+      },
+      (error) => {
+        // Vérifier si l'erreur est due à un token expiré
+        if (error.response && error.response.status === 401) {
+          // Rediriger vers la page de connexion
+          window.location.href = '/login'; // Remplacez '/login' par le chemin de votre page de connexion
+        }
+        // Renvoyer l'erreur pour que d'autres gestionnaires d'erreur puissent l'utiliser
+        return Promise.reject(error);
+      }
+    );
+
+    // Nettoyer l'intercepteur lorsque le composant est démonté
+    return () => {
+      axios.interceptors.response.eject(responseInterceptor);
+    };
+  }, []);
+
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
