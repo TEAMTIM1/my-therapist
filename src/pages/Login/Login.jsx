@@ -2,11 +2,20 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
+import ReCAPTCHA from "react-google-recaptcha";
+import { IoEyeSharp } from 'react-icons/io5';
+import { FaEyeSlash } from 'react-icons/fa';
 
 // local import
 import logo1 from '../../assets/image/welcome.png';
 
 const LoginForm = () => {
+  const [verify, setVerify] = useState(false);
+  const [hidePassword, setHidePassword] = useState(true);
+
+  const onChange =() => {
+    setVerify(true);
+  }
   // Déclarer les variables d'état pour stocker les valeurs du formulaire
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -62,7 +71,7 @@ const LoginForm = () => {
           {/* définir le formulaire avec un gestionnaire d'événements pour la soumission */}
           <h2 className="text-2xl font-bold text-center">Connexion</h2>
           <div className="flex flex-col py-2">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Adresse mail</label>
             <input
               type="text"
               name="email"
@@ -73,14 +82,19 @@ const LoginForm = () => {
             {/* définir le champ de saisie pour l'identifiant avec le nom, la valeur et le gestionnaire d'événements */}
           </div>
           <div className="flex flex-col py-2">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Mot de passe</label>
+            <div className='flex'>
             <input
-              type="password"
+              type={hidePassword ? 'password' : 'text'}
               name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="rounded-lg mt p-2 focus:border-blue-300 focus:bg-[#DBCAF4]"
+              className="rounded-lg mt p-2 focus:border-blue-300 focus:bg-[#DBCAF4] w-full"
             />
+            <a onClick={() => setHidePassword(!hidePassword)} href className="-ml-10 mt-3.5">
+                  {hidePassword ? <IoEyeSharp /> : <FaEyeSlash />}
+                </a>
+                </div>
           </div>
           <div className="flex justify-between py-2">
             <p className="flex items-center">
@@ -89,11 +103,27 @@ const LoginForm = () => {
             </p>
             <p>Mot de passe oublié ?</p>
           </div>
+          <div style={{ width: '300px' }}>
+          <ReCAPTCHA
+            sitekey={process.env.REACT_APP_APIKEY}
+            onChange={onChange}
+            size="normal"
+            />
+            </div>
+                    {verify ? (
           <button
             type="submit"
             className="btn w-full my-5 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/50 hover:bg-[#DBCAF4]">
             Se connecter
           </button>
+        ) : (
+          <button
+            type="submit"
+            className="btn w-full my-5 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/50 hover:bg-[#DBCAF4] btn-disable"
+            disabled>
+            Se connecter
+          </button>
+        )}
         </form>
       </div>
     </div>
