@@ -1,4 +1,4 @@
-import logo from '../../assets/image/image1.png';
+import logo from '../../assets/image/falling.png';
 import logo2 from '../../assets/image/familly.png';
 import logo3 from '../../assets/image/ghost.png';
 const SecondPage = () => {

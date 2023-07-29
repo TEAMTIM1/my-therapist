@@ -47,9 +47,7 @@ const Home = () => {
             </h1>
             {/* Titre de la page */}
             <h1 id="Home--description" className="md:text-2xl text-center leading-relaxed ">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo ipsa voluptatum velit.
-              Porro optio voluptatibus exercitationem. Illo saepe inventore sunt maxime doloribus
-              quidem accusamus quia voluptate veritatis dolorum. Voluptas, quod.
+            Grâce à notre puissant algorithme de redirection des clients ! Chez My Therapy, nous comprenons à quel point il est essentiel de trouver un psychologue qui vous convient parfaitement. Notre approche innovante utilise une combinaison unique de technologie de pointe et d'expertise en psychologie pour vous aider à identifier le professionnel le mieux adapté à vos besoins.
             </h1>
             {/* Description de la page */}
             <button id="Home-btn" className="btn mt-6 bg-[#580abd]">
