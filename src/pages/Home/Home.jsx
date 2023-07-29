@@ -5,6 +5,7 @@ import image from '../../assets/image/image1.png'; // Importation de l'image à 
 import SecondPage from './SecondPage'; // Importation du composant de la deuxième page
 import { ThirdPage } from './ThirdPage'; // Importation du composant de la troisième page
 import Footer from '../../components/Footer/Footer'; // Importation du composant du pied de page
+import FaqPage from './FaqPage';
 
 const Home = () => {
   // Définition du composant Home
@@ -60,6 +61,7 @@ const Home = () => {
       </div>
       <SecondPage /> {/* Affiche le composant de la deuxième page */}
       <ThirdPage /> {/* Affiche le composant de la troisième page */}
+      <FaqPage/>
       <Footer /> {/* Affiche le pied de page */}
     </>
   );

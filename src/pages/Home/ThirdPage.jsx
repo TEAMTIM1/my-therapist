@@ -18,7 +18,7 @@ export const ThirdPage = () => {
       id="carousel-section"
       className="carousel-section flex items-center flex-col px-6 h-screen bg-[#DBCAF4]">
       <div>
-        <h1 className=" mb-10 text-2xl font-semibold">Lorem ipsum dolor sit amet.</h1>
+        <h1 className=" mb-10 text-4xl font-semibold">Les psychologues donnent leur avis !</h1>
       </div>
       <div className="carousel w-auto h-auto md:w-[60%] pb-4" ref={carouselRef}>
         <div id="slide1" className="carousel-item relative w-full max-md:flex-wrap lg:min-w-[70%] flex">
@@ -26,9 +26,9 @@ export const ThirdPage = () => {
             <img src={logo} alt="/" className=" w-50 h-1/2 rounded-xl ml-20" />
           </div>
           <div className=" lg:my-20 lg:mr-28  " >
-            <h3 className="font-bold text-xl">Un Titre</h3>
+            <h3 className="font-bold text-xl">Je recommande vivement ce site !</h3>
             <span className="text-sm">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, suscipit neque deserunt aliquid maiores ratione.
+            En tant que psychologue clinicienne, j'ai été agréablement surpris par l'efficacité et la qualité des services offerts par ce site de soutien en ligne. La plateforme offre une approche novatrice pour connecter les individus ayant besoin de soutien émotionnel avec des professionnels de la santé mentale qualifiés.
             </span>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-28 lg:top-1/2">
@@ -46,9 +46,9 @@ export const ThirdPage = () => {
             <img src={logo2} alt="/" className="w-50 h-1/2 rounded-xl ml-20" />
           </div>
           <div className="lg:my-20 lg:mr-28 ">
-            <h3 className="font-bold text-xl">Un Titre</h3>
+            <h3 className="font-bold text-xl">Un site qui aide des milliers de personnes chaque jour.</h3>
             <span className="text-sm ">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, suscipit neque deserunt aliquid maiores ratione.
+            Je suis ravi de partager mon expérience avec ce site de soutien en ligne. En tant que psychologue, j'ai toujours cherché des moyens innovants pour aider davantage de personnes à accéder à des services de soutien psychologique de qualité, et ce site est une véritable trouvaille.
             </span>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-28 lg:top-1/2">
