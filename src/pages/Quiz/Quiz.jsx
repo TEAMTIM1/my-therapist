@@ -66,7 +66,7 @@ const Quiz = () => {
     }
   };
   return (
-    <div className="items-center bg-white h-screen">
+    <div className="items-center bg-white min-h-screen ">
       <div className="">
         <img className=" h-full w-full" src={quizImage} alt="" />
       </div>

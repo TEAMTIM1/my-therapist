@@ -8,6 +8,7 @@ import axios from 'axios';
 import ModalBooking from './ModalBooking';
 import RadioButton from '../../components/RadioButton/RadioButton';
 import options from '../../utils/optionsForBooking';
+import imagecalendar from "../../assets/image/app.png";
 
 // fonction qui gere la reservation en affichant le calandrien avec react-calendar
 const Booking = () => {
@@ -19,7 +20,9 @@ const Booking = () => {
     dateTime: null,
     isSelected: null
   });
-  console.log(option);
+
+  const atLeastOneResponseClicked = option.some((opt) => opt.value);
+  const atLeastOneTimeSlotSelected = date.isSelected !== null;
 
   const navigate = useNavigate();
 
@@ -90,19 +93,18 @@ const Booking = () => {
   const times = getTimes();
 
   return (
-    <div className="h-screen grid grid-cols-1 items-center bg-[#dbcaf4]">
+    <div className="min-h-screen grid grid-cols-1 justify-items-center items-center  bg-center bg-[#dbcaf4]">
       {date.justDate ? (
-        <div className="flex flex-col gap-6 items-center">
+        <div className=" flex flex-col items-center p-6 gap-6 bg-purple-600/50 rounded-md bg-clip-padding backdrop-filter bg-no-repeat backdrop-blur-sm bg-opacity-30 border border-gray-100 bg-center" style={{ backgroundImage: `url(${imagecalendar})` }}>
           <div>
-            <h1 className="text-2xl font-bold text-center">Veuillez choisir un créneau</h1>
+            <h1 className="text-2xl text-center font-semibold text-white">Veuillez choisir un créneau</h1>
           </div>
-          <div className=" grid grid-cols-3 gap-4 md:grid-flow-col">
+          <div className=" grid grid-cols-3 gap-4 md:grid-flow-col ">
             {times?.map((time, i) => (
               <div
                 key={`time-${i}`}
-                className={`rounded-full p-2 text-center ${
-                  date.isSelected === i ? 'bg-green-500' : 'bg-slate-100'
-                }`}>
+                className={`rounded-full p-2 text-center hover:bg-green-500 ${date.isSelected === i ? 'bg-green-500' : 'bg-slate-100'
+                  }`}>
                 <button
                   type="button"
                   onClick={() => {
@@ -114,13 +116,13 @@ const Booking = () => {
             ))}
           </div>
           <div>
-            <h3 className=" text-lg font-semibold text-center">
+            <h3 className=" text-lg font-semibold text-center text-wh">
               Veuillez choisir un mode de communication
             </h3>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 font-extralight">
             {options.map((option) => (
-              <div className=" flex gap-4 items-center justify-center" key={option.id}>
+              <div className=" flex flex-col gap-4 items-center justify-center" key={option.id}>
                 <RadioButton
                   type="radio"
                   id={option.id}
@@ -134,22 +136,28 @@ const Booking = () => {
             ))}
           </div>
           <button
-            className="btn w-40  hover:bg-green-600 btn-primary"
-            onClick={() => setIsModal(!isModal)}>
-            envoyer
-          </button>
+        className="btn w-40 hover:animate-pulse btn-success"
+        onClick={() => setIsModal(!isModal)}
+        disabled={!atLeastOneResponseClicked || !atLeastOneTimeSlotSelected}>
+        envoyer
+      </button>
         </div>
       ) : (
         <>
-          <div className=" flex justify-center font-bold text-2xl">
-            <h1>Veuillez selectionner une date</h1>
+          <div className=' grid grid-rows-1 gap-12'>
+            <div className="font-thin text-2xl text-center">
+              <h1>Veuillez selectionner une date</h1>
+            </div>
+            <div className=''>
+              <ReactCalendar
+                minDate={new Date()}
+                className="p-4"
+                view="month"
+                onClickDay={(date) => setDate((prev) => ({ ...prev, justDate: date }))}
+              />
+            </div>
           </div>
-          <ReactCalendar
-            minDate={new Date()}
-            className="p-4"
-            view="month"
-            onClickDay={(date) => setDate((prev) => ({ ...prev, justDate: date }))}
-          />
+
         </>
       )}
       {isModal && (
