@@ -22,7 +22,7 @@ const Home = () => {
     // Retourne les éléments JSX pour afficher la page d'accueil
     <>
       <Navbar /> {/* Affiche la barre de navigation */}
-      <div id="Home" className=" w-screen flex flex-col justify-center flex-wrap bg-[#DBCAF4]">
+      <div id="Home" className=" w-screen flex flex-col justify-center flex-wrap bg-[#DBCAF4] h-screen">
         {/* Div principale pour organiser le contenu de la page */}
         <div
           id="Home-items"
@@ -57,10 +57,10 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <SecondPage /> {/* Affiche le composant de la deuxième page */}
-      <ThirdPage /> {/* Affiche le composant de la troisième page */}
-      <FaqPage/>
-      <Footer /> {/* Affiche le pied de page */}
+      {/* <SecondPage />  */}
+      {/* <ThirdPage />  */}
+      {/* <FaqPage/> */}
+      {/* <Footer />  */}
     </>
   );
 };
