@@ -5,6 +5,7 @@ import image from '../../assets/image/image1.png'; // Importation de l'image à 
 import SecondPage from './SecondPage'; // Importation du composant de la deuxième page
 import { ThirdPage } from './ThirdPage'; // Importation du composant de la troisième page
 import Footer from '../../components/Footer/Footer'; // Importation du composant du pied de page
+import FaqPage from './FaqPage';
 
 const Home = () => {
   // Définition du composant Home
@@ -21,7 +22,7 @@ const Home = () => {
     // Retourne les éléments JSX pour afficher la page d'accueil
     <>
       <Navbar /> {/* Affiche la barre de navigation */}
-      <div id="Home" className=" w-screen flex flex-col justify-center flex-wrap bg-[#DBCAF4]">
+      <div id="Home" className=" w-screen flex flex-col justify-center flex-wrap bg-[#DBCAF4] h-screen">
         {/* Div principale pour organiser le contenu de la page */}
         <div
           id="Home-items"
@@ -46,9 +47,7 @@ const Home = () => {
             </h1>
             {/* Titre de la page */}
             <h1 id="Home--description" className="md:text-2xl text-center leading-relaxed ">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo ipsa voluptatum velit.
-              Porro optio voluptatibus exercitationem. Illo saepe inventore sunt maxime doloribus
-              quidem accusamus quia voluptate veritatis dolorum. Voluptas, quod.
+            Grâce à notre puissant algorithme de redirection des clients ! Chez My Therapy, nous comprenons à quel point il est essentiel de trouver un psychologue qui vous convient parfaitement. Notre approche innovante utilise une combinaison unique de technologie de pointe et d'expertise en psychologie pour vous aider à identifier le professionnel le mieux adapté à vos besoins.
             </h1>
             {/* Description de la page */}
             <button id="Home-btn" className="btn mt-6 bg-[#580abd]">
@@ -58,9 +57,10 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <SecondPage /> {/* Affiche le composant de la deuxième page */}
-      <ThirdPage /> {/* Affiche le composant de la troisième page */}
-      <Footer /> {/* Affiche le pied de page */}
+      {/* <SecondPage />  */}
+      {/* <ThirdPage />  */}
+      {/* <FaqPage/> */}
+      {/* <Footer />  */}
     </>
   );
 };
