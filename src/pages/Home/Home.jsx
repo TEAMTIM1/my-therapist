@@ -2,10 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Importation de la fonction useNavigate de React Router
 import Navbar from '../../components/NavBar/Navbar'; // Importation du composant de la barre de navigation
 import image from '../../assets/image/image1.png'; // Importation de l'image à afficher
-import SecondPage from './SecondPage'; // Importation du composant de la deuxième page
-import { ThirdPage } from './ThirdPage'; // Importation du composant de la troisième page
-import Footer from '../../components/Footer/Footer'; // Importation du composant du pied de page
-import FaqPage from './FaqPage';
 
 const Home = () => {
   // Définition du composant Home
