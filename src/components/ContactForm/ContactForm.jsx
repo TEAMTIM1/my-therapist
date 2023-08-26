@@ -30,7 +30,7 @@ const ContactForm = () => {
     };
 
     return (
-        <div id="contact-form" className=' grid justify-center h-screen shadow-2xl bg-[#DBCAF4]'>
+        <div id="contact-form" className=' grid justify-center min-h-screen shadow-2xl bg-[#DBCAF4]'>
 
             <div className='rounded-lg h-auto w-full px-4 m-auto shadow-2xl bg-slate-200 p-4'>
 

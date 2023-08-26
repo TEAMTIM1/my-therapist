@@ -18,7 +18,7 @@ const Home = () => {
     // Retourne les éléments JSX pour afficher la page d'accueil
     <>
       <Navbar /> {/* Affiche la barre de navigation */}
-      <div id="Home" className=" w-screen flex flex-col justify-center flex-wrap bg-[#DBCAF4] h-screen">
+      <div id="Home" className=" w-screen flex flex-col justify-center flex-wrap bg-[#DBCAF4] min-h-screen ">
         {/* Div principale pour organiser le contenu de la page */}
         <div
           id="Home-items"
@@ -46,7 +46,7 @@ const Home = () => {
             Grâce à notre puissant algorithme de redirection des clients ! Chez My Therapy, nous comprenons à quel point il est essentiel de trouver un psychologue qui vous convient parfaitement. Notre approche innovante utilise une combinaison unique de technologie de pointe et d'expertise en psychologie pour vous aider à identifier le professionnel le mieux adapté à vos besoins.
             </h1>
             {/* Description de la page */}
-            <button id="Home-btn" className="btn mt-6 bg-[#580abd]">
+            <button id="Home-btn" className="btn mt-6 md:mb-6 bg-[#580abd]">
               <a href="/quizz">Commencer</a>
             </button>
             {/* Bouton pour rediriger vers une autre page */}
